@@ -1,0 +1,54 @@
+.root {
+    -fx-base: #1b1b1b;
+    -fx-background-color: #121212;
+    -fx-text-fill: #e1e1e1;
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+#topBar, #navigationBox, #bottomBar {
+    -fx-background-color: #181818;
+    -fx-border-color: #2c2c2c;
+}
+
+.button {
+    -fx-background-color: #de9b27;
+    -fx-text-fill: #121212;
+    -fx-font-weight: bold;
+    -fx-background-radius: 0px;
+}
+
+.button:hover {
+    -fx-background-color: #f3ad31;
+}
+
+.text-field, .combo-box {
+    -fx-background-color: #242424;
+    -fx-text-fill: white;
+    -fx-border-color: #383838;
+    -fx-border-radius: 0px;
+}
+
+.table-view {
+    -fx-background-color: #161616;
+    -fx-table-cell-border-color: #262626;
+    /* Увеличиваем высоту строк таблицы, чтобы постеры помещались по высоте */
+    -fx-cell-size: 75px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #1f1f1f;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #de9b27;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: #161616;
+    -fx-text-fill: white;
+}
+
+.table-view .table-row-cell:filled:selected {
+    -fx-background-color: #2a2a2a;
+}
