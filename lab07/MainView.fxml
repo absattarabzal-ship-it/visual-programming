@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kz.atu.lab07.EditorController">
+    <top>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu text="Файл">
+                            <items>
+                                <MenuItem fx:id="miNew" onAction="#onNew" text="Новый" />
+                                <MenuItem fx:id="miOpen" onAction="#onOpen" text="Открыть..." />
+                                <MenuItem fx:id="miSave" onAction="#onSave" text="Сохранить" />
+                                <SeparatorMenuItem />
+                                <MenuItem onAction="#onExit" text="Выход" />
+                            </items>
+                        </Menu>
+                        <Menu text="Правка">
+                            <items>
+                                <MenuItem onAction="#onCut" text="Вырезать" />
+                                <MenuItem onAction="#onCopy" text="Копировать" />
+                                <MenuItem onAction="#onPaste" text="Вставить" />
+                            </items>
+                        </Menu>
+                        <Menu text="Вид">
+                            <items>
+                                <CheckMenuItem fx:id="chkDarkTheme" onAction="#onToggleTheme" text="Тёмная тема" />
+                            </items>
+                        </Menu>
+                        <Menu text="Справка">
+                            <items>
+                                <MenuItem onAction="#onAbout" text="О программе" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <ToolBar>
+                    <items>
+                        <Button onAction="#onNew" text="Новый" />
+                        <Button onAction="#onOpen" text="Открыть" />
+                        <Button onAction="#onSave" text="Сохранить" />
+                        <Separator />
+                        <Button onAction="#onCopy" text="Копировать" />
+                    </items>
+                </ToolBar>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <TextArea fx:id="txtEditor" BorderPane.alignment="CENTER">
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem onAction="#onCut" text="Вырезать" />
+                        <MenuItem onAction="#onCopy" text="Копировать" />
+                        <MenuItem onAction="#onPaste" text="Вставить" />
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TextArea>
+    </center>
+    <bottom>
+        <HBox BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="lblStatus" text="Готово" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

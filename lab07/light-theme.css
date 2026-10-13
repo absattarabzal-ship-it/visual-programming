@@ -1,0 +1,22 @@
+.root {
+    -fx-base: #f4f4f4;
+    -fx-background-color: #f4f4f4;
+}
+
+.text-area {
+    -fx-control-inner-background: #ffffff;
+    -fx-text-fill: #000000;
+}
+
+.menu-bar, .tool-bar {
+    -fx-background-color: #f4f4f4;
+}
+
+.h-box {
+    -fx-background-color: #e0e0e0;
+    -fx-padding: 5px;
+}
+
+.label {
+    -fx-text-fill: #000000;
+}
