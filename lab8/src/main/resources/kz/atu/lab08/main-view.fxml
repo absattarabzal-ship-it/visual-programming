@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kz.atu.lab08.MainController">
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu text="Файл">
+                    <items>
+                        <MenuItem text="Открыть..." onAction="#onOpen">
+                            <accelerator>
+                                <KeyCodeCombination alt="DOWN" code="O" control="DOWN" meta="UP" shift="UP" shortcut="ANY"/>
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem text="Сохранить" onAction="#onSave">
+                            <accelerator>
+                                <KeyCodeCombination alt="DOWN" code="S" control="DOWN" meta="UP" shift="UP" shortcut="ANY"/>
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem text="Сохранить как..." onAction="#onSaveAs"/>
+                        <SeparatorMenuItem/>
+                        <MenuItem text="Выход" onAction="#onExit">
+                            <accelerator>
+                                <KeyCodeCombination alt="DOWN" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="ANY"/>
+                            </accelerator>
+                        </MenuItem>
+                    </items>
+                </Menu>
+                <Menu text="Правка">
+                    <items>
+                        <MenuItem text="Добавить авто" onAction="#onAddCar"/>
+                        <MenuItem text="Редактировать авто" onAction="#onEditCar"/>
+                    </items>
+                </Menu>
+                <Menu text="Справка">
+                    <items>
+                        <MenuItem text="О программе" onAction="#onAbout"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+    <!-- Разделение экрана: слева таблица, справа текстовый список автомобилей -->
+    <center>
+        <SplitPane dividerPositions="0.65">
+            <items>
+                <!-- Таблица автомобилей -->
+                <TableView fx:id="tableCars">
+                    <columns>
+                        <TableColumn fx:id="colBrand" text="Марка" prefWidth="120"/>
+                        <TableColumn fx:id="colModel" text="Модель" prefWidth="120"/>
+                        <TableColumn fx:id="colYear" text="Год" prefWidth="80"/>
+                        <TableColumn fx:id="colPrice" text="Цена ($)" prefWidth="100"/>
+                    </columns>
+                </TableView>
+
+                <!-- Список автомобилей (ListView) -->
+                <VBox spacing="5">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                    <Label text="Список всех авто (строковый):" style="-fx-font-weight: bold;"/>
+                    <ListView fx:id="listCarsSummary" VBox.vgrow="ALWAYS"/>
+                </VBox>
+            </items>
+        </SplitPane>
+    </center>
+
+    <bottom>
+        <HBox>
+            <padding>
+                <Insets top="5" right="5" bottom="5" left="5"/>
+            </padding>
+            <Label fx:id="lblStatus" text="Готово"/>
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kz.atu.lab08.CarDialogController">
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <Label text="Марка:"/>
+    <ComboBox fx:id="cmbBrand" prefWidth="300"/>
+
+    <Label text="Модель:"/>
+    <TextField fx:id="txtModel"/>
+
+    <Label text="Год выпуска:"/>
+    <TextField fx:id="txtYear"/>
+
+    <Label text="Цена ($):"/>
+    <TextField fx:id="txtPrice"/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Сохранить" onAction="#onSave" defaultButton="true"/>
+        <Button text="Отмена" onAction="#onCancel" cancelButton="true"/>
+    </HBox>
+</VBox>
