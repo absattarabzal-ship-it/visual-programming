@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane stylesheets="@validation.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kz.atu.lab09.RentalController">
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets bottom="15" left="15" right="15" top="15" />
+            </padding>
+            <GridPane hgap="10" vgap="5">
+                <!-- ID -->
+                <Label text="ID аренды:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="txtId" promptText="например, R-001" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label fx:id="lblIdError" styleClass="error-label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <!-- ФИО Клиента -->
+                <Label text="ФИО Клиента:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="txtClientName" promptText="Введите ФИО" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label fx:id="lblClientNameError" styleClass="error-label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <!-- Модель авто -->
+                <Label text="Автомобиль:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <ComboBox fx:id="cmbCarModel" promptText="Выберите модель" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label fx:id="lblCarModelError" styleClass="error-label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                <!-- Дни -->
+                <Label text="Срок (дней):" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                <TextField fx:id="txtDays" promptText="1-30" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <Label fx:id="lblDaysError" styleClass="error-label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            </GridPane>
+
+            <HBox spacing="10">
+                <Button text="Зарегистрировать аренду" onAction="#onRegister" />
+                <Button text="Очистить" onAction="#onClear" />
+            </HBox>
+        </VBox>
+    </center>
+    <bottom>
+        <TableView fx:id="tableRentals" prefHeight="200">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="80" />
+                <TableColumn fx:id="colClient" text="Клиент" prefWidth="200" />
+                <TableColumn fx:id="colCar" text="Автомобиль" prefWidth="150" />
+                <TableColumn fx:id="colDays" text="Дни" prefWidth="80" />
+            </columns>
+        </TableView>
+    </bottom>
+</BorderPane>
